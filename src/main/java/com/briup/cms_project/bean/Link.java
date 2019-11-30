@@ -1,21 +1,22 @@
 package com.briup.cms_project.bean;
 
 import io.swagger.annotations.ApiModel;
-import org.springframework.data.annotation.Id;
+import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
+
 @Entity
-@Table(name="cms_link")
+@Table(name = "cms_link")
 @ApiModel
 public class Link implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @ApiModelProperty(value = "链接id")
+    private Integer id;
+    @ApiModelProperty(value = "链接名字", required = true)
     private String name;
+    @ApiModelProperty(value = "链接url", required = true)
     private String url;
 
     public int getId() {

@@ -4,13 +4,12 @@ package com.briup.cms_project.exception;
  * @program: estore
  * @description: 自定义异常
  * @author: wangzh
- *
  **/
 
 public class CustomerException extends RuntimeException {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
+    /**
      * 状态码
      */
     private Integer code;
@@ -23,7 +22,7 @@ public class CustomerException extends RuntimeException {
         this.code = code;
     }
 
-    public CustomerException(Integer code, String message){
+    public CustomerException(Integer code, String message) {
         super(message);
         this.code = code;
     }
